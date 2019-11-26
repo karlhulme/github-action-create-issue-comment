@@ -26,11 +26,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Prepare Release
+      - name: Add Comment
         uses: karlhulme/github-action-create-issue-comment@master
         with:
-          issueNumber: 1
-          body: 'Adding a comment right here.'
+          issueNumber: 5 # or ${{ github.event.issue.number }}
+          body: ${{ format('You said {0}', github.event.comment.body) }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
 ```
