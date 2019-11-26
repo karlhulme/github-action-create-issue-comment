@@ -4801,10 +4801,20 @@ const addCommentToIssue = __webpack_require__(754)
  * @param {Object} props The input properties to the github action.
  */
 const run = async ({ issueNumber, body, owner, repo, createComment }) => {
-  await addCommentToIssue(owner, repo, issueNumber, body, createComment)
+  try {
+    if (!issueNumber) throw new Error('Issue number not supplied.')
+    if (!body) throw new Error('Body not supplied.')
 
-  return {
-    didComment: 'yes'
+    await addCommentToIssue(owner, repo, issueNumber, body, createComment)
+
+    return {
+      didComment: 'yes'
+    }
+  } catch (err) {
+    return {
+      didComment: 'no',
+      commentFailureReason: err.toString()
+    }
   }
 }
 

@@ -1,5 +1,5 @@
 /**
- * Creates a release on a branch.
+ * Adds a comment to an issue.
  * @param {String} owner The owner of the repo.
  * @param {String} repo The name of the repo.
  * @param {String} issueNumber The name of the issue.

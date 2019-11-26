@@ -12,6 +12,7 @@ A comment will be added to an issue.
 ## Ouputs
 
 * **didComment** - A value of ''yes'' or ''no'' that indicates if the comment was written.
+* **commentFailureReason** - If didComment equals ''no'' the this value will state what went wrong.
 
 ## Example
 

@@ -11,6 +11,8 @@ inputs:
 outputs:
   didComment:
     description: 'A value of ''yes'' or ''no'' that indicates if the comment was written.'
+  commentFailureReason:
+    description: 'If didComments equal ''no'' the this value will state what went wrong.'
 runs:
   using: 'node12'
   main: 'dist/index.js'
