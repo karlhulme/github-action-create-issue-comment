@@ -1,0 +1,19 @@
+name: 'Create Issue Comment'
+description: 'Creates a comment on an issue.'
+author: 'Karl Hulme'
+inputs:
+  issueNumber:
+    description: 'The number of an issue.'
+    required: true
+  body:
+    description: 'The body of the comment to be added.'
+    required: true
+outputs:
+  didComment:
+    description: 'A value of ''yes'' or ''no'' that indicates if the comment was written.'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'tag'
+  color: 'gray-dark'
