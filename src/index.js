@@ -15,7 +15,7 @@ const entryPoint = async () => {
     body: core.getInput('body'),
     owner,
     repo,
-    createComment: github.repos.createComment
+    createComment: github.issues.createComment
   }
 
   console.log(`Inputs\n${JSON.stringify(input, null, 2)}\n`)
